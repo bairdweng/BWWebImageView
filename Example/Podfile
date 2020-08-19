@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'BWWebImageView_Example' do
+  pod 'BWWebImageView', :path => '../'
+
+  target 'BWWebImageView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

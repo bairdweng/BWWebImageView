@@ -1,0 +1,16 @@
+PODS:
+  - BWWebImageView (0.1.0)
+
+DEPENDENCIES:
+  - BWWebImageView (from `../`)
+
+EXTERNAL SOURCES:
+  BWWebImageView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  BWWebImageView: a5ff5e7cd75393496f523394ae456f32a38570f0
+
+PODFILE CHECKSUM: 4c36ba22f87e9d6151286625d8a1fb11006dc4a5
+
+COCOAPODS: 1.9.3
