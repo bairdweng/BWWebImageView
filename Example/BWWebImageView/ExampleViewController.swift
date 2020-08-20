@@ -9,6 +9,7 @@
 import UIKit
 
 class ExampleViewController: UIViewController {
+    var ticket = 10000
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +39,6 @@ class ExampleViewController: UIViewController {
                 print(error)
             }
         }
-        
         for _ in 0..<3 {
             queue.async(execute: readWorkItem)
         }
@@ -48,23 +48,18 @@ class ExampleViewController: UIViewController {
         }
     }
     
-    func example2() {
-        let queue = DispatchQueue(label: "com.ffib.blog.initiallyInactive.queue", qos: .utility)
-        queue.async {
-            for i in 0..<5 {
-                print(i)
-            }
-        }
-        queue.async {
-            for i in 5..<10 {
-                print(i)
-            }
-        }
-        queue.async {
-            for i in 10..<15 {
-                print(i)
-            }
+    @IBAction func clickOntheLock(_ sender: Any) {
+        for i in 0...200 {
+            buyTicket(userName: "hello\(i)")
         }
     }
-    
+    func buyTicket(userName: String) {
+        DispatchQueue.global().async {
+            objc_sync_enter(self.ticket)
+            let count = self.ticket - 1
+            self.ticket = count
+            objc_sync_exit(self.ticket)
+            print("\(userName)买了一张票，剩余票数\(self.ticket)")
+        }
+    }
 }

@@ -1,16 +1,25 @@
 PODS:
-  - BWWebImageView (0.1.0)
+  - BWWebImageView (0.1.0):
+    - Kingfisher
+  - Kingfisher (5.13.2):
+    - Kingfisher/Core (= 5.13.2)
+  - Kingfisher/Core (5.13.2)
 
 DEPENDENCIES:
   - BWWebImageView (from `../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Kingfisher
 
 EXTERNAL SOURCES:
   BWWebImageView:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BWWebImageView: a5ff5e7cd75393496f523394ae456f32a38570f0
+  BWWebImageView: ccfaec988afad484a8ce011063a971f3a97c84af
+  Kingfisher: d342c8354c10c3d85a27d6d4c42c41285924b898
 
-PODFILE CHECKSUM: 4c36ba22f87e9d6151286625d8a1fb11006dc4a5
+PODFILE CHECKSUM: 1ec8d0c41eb1d7037f0705dedc1fc03d96b1b04c
 
 COCOAPODS: 1.9.3

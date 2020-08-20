@@ -288,10 +288,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BWWebImageView_Example/Pods-BWWebImageView_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BWWebImageView/BWWebImageView.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BWWebImageView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -48,13 +48,31 @@
                                     <segue destination="hMR-8S-zdD" kind="push" id="w9F-Nk-3Mg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00J-kk-w70">
+                                <rect key="frame" x="95" y="579" width="31" height="30"/>
+                                <state key="normal" title="刷新"/>
+                                <connections>
+                                    <action selector="clickOntheRef:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="uob-H7-dh4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Poe-uf-vy2">
+                                <rect key="frame" x="141" y="579" width="31" height="30"/>
+                                <state key="normal" title="队列"/>
+                                <connections>
+                                    <action selector="clickOntheShowQueue:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="sv0-Vb-Chb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="00J-kk-w70" firstAttribute="leading" secondItem="ksY-J9-oEf" secondAttribute="trailing" constant="15" id="0RL-kL-p2t"/>
+                            <constraint firstItem="00J-kk-w70" firstAttribute="top" secondItem="00X-5e-Sm5" secondAttribute="bottom" constant="15" id="3Vy-TL-5QD"/>
+                            <constraint firstItem="Poe-uf-vy2" firstAttribute="leading" secondItem="00J-kk-w70" secondAttribute="trailing" constant="15" id="8TB-cY-vs1"/>
                             <constraint firstAttribute="trailing" secondItem="00X-5e-Sm5" secondAttribute="trailing" id="ADT-Ru-UVj"/>
                             <constraint firstItem="00X-5e-Sm5" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="JTZ-eX-BCW"/>
                             <constraint firstItem="ksY-J9-oEf" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="15" id="Ovx-CO-kj7"/>
                             <constraint firstAttribute="trailing" secondItem="i5u-WO-MSK" secondAttribute="trailing" constant="15" id="Vhb-0I-xbn"/>
+                            <constraint firstItem="Poe-uf-vy2" firstAttribute="top" secondItem="00X-5e-Sm5" secondAttribute="bottom" constant="15" id="cJt-ce-vwO"/>
                             <constraint firstItem="ksY-J9-oEf" firstAttribute="top" secondItem="00X-5e-Sm5" secondAttribute="bottom" constant="15" id="fr6-Cn-AwH"/>
                             <constraint firstItem="00X-5e-Sm5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="jQv-l8-DNc"/>
                             <constraint firstItem="i5u-WO-MSK" firstAttribute="top" secondItem="00X-5e-Sm5" secondAttribute="bottom" constant="15" id="pD4-PT-zTn"/>
@@ -93,9 +111,18 @@
                                     <action selector="clickOntheReadBarrier:" destination="hMR-8S-zdD" eventType="touchUpInside" id="Tcx-RZ-xKH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjZ-xw-jOo">
+                                <rect key="frame" x="329" y="59" width="31" height="30"/>
+                                <state key="normal" title="加锁"/>
+                                <connections>
+                                    <action selector="clickOntheLock:" destination="hMR-8S-zdD" eventType="touchUpInside" id="cuH-Xw-q2n"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="tjZ-xw-jOo" firstAttribute="top" secondItem="kuW-w1-X8G" secondAttribute="bottom" constant="15" id="0tL-Ae-xFK"/>
+                            <constraint firstAttribute="trailing" secondItem="tjZ-xw-jOo" secondAttribute="trailing" constant="15" id="ALT-53-dZV"/>
                             <constraint firstItem="vI3-Eh-WXz" firstAttribute="top" secondItem="kuW-w1-X8G" secondAttribute="bottom" constant="15" id="fvo-z6-Qqa"/>
                             <constraint firstItem="vI3-Eh-WXz" firstAttribute="leading" secondItem="El4-Z1-dZg" secondAttribute="leading" constant="15" id="wH2-N1-Nar"/>
                         </constraints>

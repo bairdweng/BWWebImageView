@@ -8,6 +8,7 @@
 
 import UIKit
 import BWWebImageView
+import Kingfisher
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 100
@@ -36,6 +37,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "TestTableViewCell", bundle: nil), forCellReuseIdentifier: "table_view_cell")
+        
+    
+        
+        
+//        KingfisherManager.shared.cache.removeImage(forKey: "")
+
         // Do any additional setup after loading the view, typically from a nib.
     }
     @IBOutlet weak var tableView: UITableView!
@@ -49,9 +56,14 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         BWImageQueueManage.single.cancelOperation()
     }
     
-    @IBAction func clickOntheExample(_ sender: Any) {
-        let example = ExampleViewController()
-        self.navigationController?.pushViewController(example, animated: true)
+    @IBAction func clickOntheRef(_ sender: Any) {
+        /// 刷新是手动取消之前的下载
+        BWImageQueueManage.single.cancelOperation()
+        tableView.reloadData()
+    }
+    @IBAction func clickOntheShowQueue(_ sender: Any) {
+        let downQueue = BWImageQueueManage.single.downQueue.operationCount
+        print("\(downQueue)")
     }
     
 }

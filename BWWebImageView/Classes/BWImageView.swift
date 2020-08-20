@@ -6,11 +6,24 @@
 //
 
 import UIKit
+var myNameKey = 100
 
 extension UIImageView {
-    
+       var myToken: String {
+        set {
+            objc_setAssociatedObject(self, &myNameKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_COPY_NONATOMIC)
+        }
+        
+        get {
+            if let rs = objc_getAssociatedObject(self, &myNameKey) as? String {
+                return rs
+            }
+            return ""
+        }
+    }
     open func bw_setUrl(url:String) {
         self.image = nil
+        myToken = url
         //        BWImageCacheManage.getCache(url: url) { (data) in
         //            if let imageData = data {
         //                print("获取缓存图片")
@@ -22,34 +35,21 @@ extension UIImageView {
         //            }
         //        }
         self.downImage(url: url)
-        
     }
     func downImage(url:String) {
-        /*
-        BWImageQueueManage.single.addOperation {
-            print("当前线程：\(Thread.current)")
-            if let m_url = URL(string: url) {
-                do {
-                    let imageData = try Data(contentsOf: m_url)
-                    OperationQueue.main.addOperation {
-                        self.image = UIImage(data: imageData)
-                    }
-                } catch _ {
-                    
-                }
-            }
-        }*/
-//        return
-        BWImageDownLoad.downLoad(url: url) { (data) in
+        let operation = BWDownloadOpration()
+        operation.url = url
+        BWImageLoadManage.manage().startTask(opration: operation) { (data,c_url) in
+//            print("回来了")
             if let imageData = data {
-                /// 这里执行
-                BWImageCacheManage.saveData(url: url, data: imageData)
-                /// 主队列
+                if c_url != self.myToken {
+                    print("url==============不匹配")
+                    return;
+                }
                 OperationQueue.main.addOperation {
-                    /// 等待线程执行完成后调用
-                    print("完成啦")
                     self.image = UIImage(data: imageData)
                 }
+                
             }
         }
     }
